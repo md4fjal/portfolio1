@@ -69,7 +69,7 @@ const Contact = () => {
   return (
     <div id="contact">
       <section>
-        <motion.form {...animations.form} method="POST">
+        <motion.form {...animations.form} method="POST" onSubmit={postData}>
           <h2>Contact Me</h2>
           <input
             type="text"
@@ -102,7 +102,6 @@ const Contact = () => {
           <motion.button
             {...animations.button}
             type="submit"
-            onClick={postData}
           >
             Send
           </motion.button>
