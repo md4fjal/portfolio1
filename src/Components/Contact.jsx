@@ -77,8 +77,8 @@ const Contact = () => {
             value={user.name}
             onChange={getData}
             placeholder="Your Name"
-            required
             autoComplete="off"
+            required
           />
           <input
             type="email"
@@ -86,17 +86,17 @@ const Contact = () => {
             placeholder="Your Email"
             value={user.email}
             onChange={getData}
-            required
             autoComplete="off"
+            required
           />
           <input
             type="text"
             name="message"
             placeholder="Your Message"
-            required
             value={user.message}
             onChange={getData}
             autoComplete="off"
+            required
           />
 
           <motion.button
