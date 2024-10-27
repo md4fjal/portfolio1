@@ -9,28 +9,33 @@ nav {
   position: sticky;
   top: 0%;
   z-index: 60;
-  > h2 {
+
+  >h2 {
     font-size: 2rem;
+
     >span {
       color: $color3;
     }
   }
-  > div {
+
+  >div {
     display: flex;
     align-items: center;
     gap: 2rem;
+
     a {
       color: $color6;
       font-weight: 500;
       transition: all 0.3s;
       letter-spacing: 1px;
+
       &:hover {
         color: $color3;
       }
     }
   }
 
-  > a > button {
+  >a>button {
     border: 1px solid $color6_1;
     padding: 0.5rem 2rem;
     background-color: $color1;
@@ -39,6 +44,7 @@ nav {
     letter-spacing: 1px;
     font-weight: 500;
     transition: all 0.3s;
+
     &:hover {
       background-color: $color6;
       color: $color4;
@@ -80,12 +86,12 @@ nav {
   justify-content: center;
   gap: 3rem;
 
-  > h2 {
+  >h2 {
     font-size: 2rem;
     color: $color4;
   }
 
-  > div {
+  >div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,13 +102,14 @@ nav {
       letter-spacing: 1px;
       font-weight: 500;
       transition: all 0.3s;
+
       &:hover {
         color: $color3;
       }
     }
   }
 
-  > a > button {
+  >a>button {
     border: 1px solid $color6_1;
     padding: 0.5rem 2rem;
     background-color: $color1;
@@ -111,6 +118,7 @@ nav {
     letter-spacing: 1px;
     font-weight: 500;
     transition: 0.5s;
+
     &:hover {
       background-color: $color6;
       color: $color4;

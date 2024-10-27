@@ -1,44 +1,49 @@
 import React, { useState } from "react";
 import vg from "../Assets/logo.png";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 const Contact = () => {
-  const [user,setUser] = useState({
+  const [user, setUser] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const getData = (e) => {
     let name = e.target.name;
     let value = e.target.value;
 
-    setUser({...user, [name] : value});
-    
-  }
+    setUser({ ...user, [name]: value });
+  };
 
-  const {name, email, message} = user;
+  const { name, email, message } = user;
   const postData = async (e) => {
     e.preventDefault();
-    const res = await fetch('https://react-portfolio-b9c12-default-rtdb.firebaseio.com/userDatail.json', {
-      method: "POST",
-      Headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        message
-      })
-    })
-    if(res) {
+    const res = await fetch(
+      "https://react-portfolio-b9c12-default-rtdb.firebaseio.com/userDatail.json",
+      {
+        method: "POST",
+        Headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      }
+    );
+    if (res) {
       setUser({
         name: "",
         email: "",
-        message: ""
-      })
-      alert("Data Sent Successfully")
+        message: "",
+      });
+      toast.success("Data Sent Successfully.");
+    } else {
+      toast.error("Having a Problem in Sending Data");
     }
-  }
+  };
 
   const animations = {
     form: {
@@ -99,10 +104,7 @@ const Contact = () => {
             required
           />
 
-          <motion.button
-            {...animations.button}
-            type="submit"
-          >
+          <motion.button {...animations.button} type="submit">
             Send
           </motion.button>
         </motion.form>
